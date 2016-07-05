@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for post in posts %}
+<article class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="single.html" title="">{{ post.title }}</a>
+						</h2> 				 
+					
+						<div class="entry-meta">
+							<ul>
+								<li>{{ post.published_date }}</li>
+								<span class="meta-sep">&bull;</span>
+								<li>{{ post.author }}</li>
+							</ul>
+						</div> 
+					 
+					</header> 
+					
+					<div class="entry-content">
+						<p>{{ post.text|linebreaksbr }}</p>
+					</div> 
+
+</article> <!-- end entry -->
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+{% block sidebar %}
+
+{% endblock %}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+{% load staticfiles %}
+{% load ctop_tags %}
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Compiler Technology to Optimize Performance</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="{% static 'css/default.css' %}">
+	<link rel="stylesheet" href="{% static 'css/layout.css' %}">  
+	<link rel="stylesheet" href="{% static 'css/media-queries.css' %}"> 
+
+   <!-- Script
+   ================================================== -->
+	<script src="{% static 'js/modernizr.js' %}"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<!-- <link rel="shortcut icon" href="favicon.png" > -->
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="top">
+
+   	<div class="row">
+
+   		<div class="header-content twelve columns">
+
+		      <h1 id="logo-text"><a href="index.html" title="">Compiler Technology to Optimize Performance</a></h1>
+				<p id="intro"></p>
+
+			</div>			
+
+	   </div>
+
+	   <nav id="nav-wrap"> 
+
+	   	<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+		   <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+
+	   	<div class="row">    		            
+
+			   	<ul id="nav" class="nav">
+			      	<li {% isActive request 'post_frontpage' %}><a href="{% url 'post_frontpage' %}">Home</a></li>
+	               <li {% isActive request 'people_list' %}><a href="{% url 'people_list' %}">People</a></li>	
+	               <li><a href="">Publications</a></li>
+	               <li><a href="">Talks</a></li>
+	               <li><a href="">Tools</a></li>
+
+			   	</ul> <!-- end #nav -->			   	 
+
+	   	</div> 
+
+	   </nav> <!-- end #nav-wrap --> 	     
+
+   </header> <!-- Header End -->
+
+   <!-- Content
+   ================================================== -->
+   <div id="content-wrap">
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+   			{% block content %} 
+				{% endblock %} 	
+   		
+						
+
+   		</div> <!-- end main -->
+
+   		<div id="sidebar" class="four columns">
+   			{% block sidebar %}
+
+   			{% endblock %} 
+
+
+
+   			   <div class="widget widget_popular">
+               <h3>Links</h3>
+
+               <ul class="link-list">
+                  <li><a href="#">Center of Parallel Computing @ Utah</a></li>
+                  <li><a href="#">School of Computing</a></li>
+                  <li><a href="#">University of Utah</a></li>                     
+               </ul>
+                  
+            </div>	
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+   </div> <!-- end content-wrap -->
+   
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row"> 
+
+
+      	
+         <div class="six columns info">
+
+            <h3>About CTOP</h3> 
+
+            <p>Our research focuses on compiler-based approaches to obtaining high performance on state-of-the-art and experimental architectures, including multi-cores, GPUs and petascale platforms.</p>
+
+         </div>
+
+        
+
+         <div class="two columns">
+            <h3 class="social">Navigate</h3>
+
+            <ul class="navigate group">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Demo</a></li>
+               <li><a href="#">Archives</a></li>
+               <li><a href="#">About</a></li>
+            </ul>
+         </div>
+
+        
+      </div> <!-- End row -->
+
+
+
+   </footer> <!-- End Footer-->
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src={% static "js/jquery-1.10.2.min.js" %}><\/script>')</script>
+   <script type="text/javascript" src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>  
+   <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

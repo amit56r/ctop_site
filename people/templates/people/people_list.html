@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load people_tags %}
+
+
+{% block content %}
+
+<article class="entry">
+{% if faculty %}
+<header class="entry-header">
+<h3>Faculty</h3>
+</header>
+	<ul class="disc">
+		{% for p in faculty %}
+		<li>{{p.first_name}} {{p.last_name}}{% if p.website %} <small><a href="{{p.website}}" >web</a></small> {% endif %}</li>
+		{% endfor %}
+	</ul>
+	
+{% endif %}
+</article>
+
+<article class="entry">
+{% if current_students %}
+<header class="entry-header">
+<h3>Students</h3>
+</header>
+	<ul class="disc">
+		{% for p in current_students  %}
+		<li>{{p.first_name}} {{p.last_name}} ({{p.degree|degreeStr}}){% if p.website %} <small><a href="{{p.website}}" >web</a></small> {% endif %}</li>
+		{% endfor %}
+	</ul>
+	
+{% endif %}
+</article>
+
+<article class="entry">
+{% if alumni %}
+<header class="entry-header">
+<h3>Alumni</h3>
+</header>
+	<ul class="disc">
+		{% for p in alumni %}
+		<li>{{p.first_name}} {{p.last_name}} ({{p.degree|degreeStr}}{{p.postgrad_job|postgradStr}}){% if p.website %} <small><a href="{{p.website}}" >web</a></small> {% endif %}</li>
+		{% endfor %}
+	</ul>
+	
+{% endif %}
+</article>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block sidebar %}
+
+{% endblock %}
