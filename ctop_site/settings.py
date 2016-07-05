@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ctop_site',
     'post',
     'people',
+    'pubs',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="row add-bottom">
+
+<div class="twelve columns add-bottom">
+
+<h3 class="add-bottom">Pagination</h3>
+
+<nav class="pagination add-bottom">
+
+<span class="page-numbers prev inactive">Prev</span>
+<span class="page-numbers current">1</span>
+<a href="#" class="page-numbers">2</a>
+<a href="#" class="page-numbers">3</a>
+<a href="#" class="page-numbers">4</a>
+<a href="#" class="page-numbers">5</a>
+<a href="#" class="page-numbers">6</a>
+<a href="#" class="page-numbers">7</a>
+<a href="#" class="page-numbers">8</a>
+<a href="#" class="page-numbers">9</a>
+<a href="#" class="page-numbers next">Next</a>
+
+</nav>
+
+</div>
+
+<hr />
+
+</div> <!-- Row End-->
+{% endblock %}
+
+
+
+{% block sidebar %}
+<div class="widget widget_search">
+	<h3>Search</h3> 
+	<form type="get" action="">
+
+		<input  name ="search" type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+		<input type="submit" value="" class="submit-search">
+
+	</form>
+</div>
+
+<div class="widget widget_categories group">
+<h3>Categories.</h3> 
+<ul>
+	<li><a href="#" title="">Wordpress</a> (2)</li>
+
+
+	<form type="get" action="">
+
+	<input name="test" type="checkbox"></input>
+	<input type="submit" value="" class="submit-search">
+	</form>
+
+
+	<li><a href="#" title="">Ghost</a> (14)</li>
+	<li><a href="#" title="">Joomla</a> (5)</li>
+	<li><a href="#" title="">Drupal</a> (3)</li>
+	<li><a href="#" title="">Magento</a> (2)</li>
+	<li><a href="#" title="">Uncategorized</a> (9)</li>						
+</ul>
+</div>
+
+
+<div class="widget widget_tags">
+               <h3>Post Tags.</h3>
+
+               <div class="tagcloud group">
+                	<a href="#">Corporate</a>
+                  <a href="#">Onepage</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Multipurpose</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Landing Page</a>
+                  <a href="#">Resume</a>
+               </div>
+                  
+            </div>
+
+{% endblock %}

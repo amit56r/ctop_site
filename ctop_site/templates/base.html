@@ -60,9 +60,9 @@
 	   	<div class="row">    		            
 
 			   	<ul id="nav" class="nav">
-			      	<li {% isActive request 'post_frontpage' %}><a href="{% url 'post_frontpage' %}">Home</a></li>
-	               <li {% isActive request 'people_list' %}><a href="{% url 'people_list' %}">People</a></li>	
-	               <li><a href="">Publications</a></li>
+			       <li {% isActive request 'post_frontpage' %}><a href="{% url 'post_frontpage' %}">Home</a></li>
+	               <li {% isActive request 'people_list' %}><a href="{% url 'people_list' %}">People</a></li>
+	               <li {% isActive request 'pub_list' %}><a href="{% url 'pub_list' %}">Publications</a></li>	
 	               <li><a href="">Talks</a></li>
 	               <li><a href="">Tools</a></li>
 
