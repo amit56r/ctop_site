@@ -6,35 +6,45 @@
 
 
 
+<article class="entry">
+<header class="entry-header">
+</header>
+	<ol class="disc">
+		{% for pub in page.object_list %}
+		<li>{{pub.title}}</li>
+		{% endfor %}
+	</ol>
+	
+</article>
 
 
 
 <div class="row add-bottom">
-
-<div class="twelve columns add-bottom">
-
-<h3 class="add-bottom">Pagination</h3>
-
 <nav class="pagination add-bottom">
 
-<span class="page-numbers prev inactive">Prev</span>
-<span class="page-numbers current">1</span>
-<a href="#" class="page-numbers">2</a>
-<a href="#" class="page-numbers">3</a>
-<a href="#" class="page-numbers">4</a>
-<a href="#" class="page-numbers">5</a>
-<a href="#" class="page-numbers">6</a>
-<a href="#" class="page-numbers">7</a>
-<a href="#" class="page-numbers">8</a>
-<a href="#" class="page-numbers">9</a>
-<a href="#" class="page-numbers next">Next</a>
+{% if page.has_previous %}
+<a href="{% url 'pub_with_page' page.previous_page_number %}" class="page-numbers next">Prev</a>
+{% else %}
+<a href="" class="page-numbers next inactive">Prev</a>
+{% endif %}
+
+
+{% for pg_id in page_range %}
+	{% if page.number == pg_id%}
+	<a href="{% url 'pub_with_page' pg_id %}" class="page-numbers current">{{pg_id}}</a>
+	{% else %}
+	<a href="{% url 'pub_with_page' pg_id %}" class="page-numbers">{{pg_id}}</a>
+	{% endif %}
+{% endfor %}
+
+{% if page.has_next %}
+<a href="{% url 'pub_with_page' page.next_page_number %}" class="page-numbers next">Next</a>
+{% else %}
+<a href="" class="page-numbers next inactive">Next</a>
+{% endif %}
 
 </nav>
-
-</div>
-
 <hr />
-
 </div> <!-- Row End-->
 {% endblock %}
 
@@ -51,41 +61,18 @@
 	</form>
 </div>
 
-<div class="widget widget_categories group">
-<h3>Categories.</h3> 
-<ul>
-	<li><a href="#" title="">Wordpress</a> (2)</li>
-
-
-	<form type="get" action="">
-
-	<input name="test" type="checkbox"></input>
-	<input type="submit" value="" class="submit-search">
-	</form>
-
-
-	<li><a href="#" title="">Ghost</a> (14)</li>
-	<li><a href="#" title="">Joomla</a> (5)</li>
-	<li><a href="#" title="">Drupal</a> (3)</li>
-	<li><a href="#" title="">Magento</a> (2)</li>
-	<li><a href="#" title="">Uncategorized</a> (9)</li>						
-</ul>
-</div>
 
 
 <div class="widget widget_tags">
-               <h3>Post Tags.</h3>
+<h3>Type</h3>
+<div class="tagcloud group">
+	{% for type in type_list %}
+	<a href="?{{qDict.urlencode}}">{{type.1}}</a>
+	{% endfor %}
+</div>
+  
+</div>
 
-               <div class="tagcloud group">
-                	<a href="#">Corporate</a>
-                  <a href="#">Onepage</a>
-                  <a href="#">Agency</a>
-                  <a href="#">Multipurpose</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Landing Page</a>
-                  <a href="#">Resume</a>
-               </div>
-                  
-            </div>
+
 
 {% endblock %}

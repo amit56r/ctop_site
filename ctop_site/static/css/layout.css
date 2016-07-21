@@ -368,6 +368,7 @@ ul#nav ul li a {
 
    border-radius: 3px;
 }
+#sidebar .tagcloud .current,
 #sidebar .tagcloud a:hover {
    color: #fff;
    background: #e2192c;

@@ -54,6 +54,6 @@ class Publication(models.Model):
 
 
 	def __str__(self):
-		return '{}...'.format(title[0:20])
+		return '{}...'.format(self.title[0:20])
 
 
